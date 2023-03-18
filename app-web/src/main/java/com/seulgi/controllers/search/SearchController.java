@@ -17,12 +17,13 @@ public class SearchController {
 
     final SearchService searchService;
 
+    // todo - query 안들어 왔을 때 예외처리 해주면 좋을
     @GetMapping("/search/blog")
-    public Search searchBlogs(@RequestParam String query,
-                              @RequestParam(defaultValue = "ACCURACY", required = false) SearchSortType sort,
-                              @RequestParam(defaultValue = "1", required = false) int page,
-                              @RequestParam(defaultValue = "10", required = false) int size) {
-        return searchService.searchBlogs(
+    public Search searchBlog(@RequestParam String query,
+                             @RequestParam(defaultValue = "ACCURACY", required = false) SearchSortType sort,
+                             @RequestParam(defaultValue = "1", required = false) int page,
+                             @RequestParam(defaultValue = "10", required = false) int size) {
+        return searchService.searchBlog(
                 SearchBlogsReq.builder()
                         .query(query)
                         .sort(sort)
