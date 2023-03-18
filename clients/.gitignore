@@ -11,3 +11,4 @@ application-local.properties
 target
 /*.iml
 .gradle
+.lock
