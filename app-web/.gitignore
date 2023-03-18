@@ -1,15 +1,26 @@
-.editorconfig
-.settings/
-target/
-.project
+.gradle
+/build/
+!gradle/wrapper/gradle-wrapper.jar
+/out
+
+### STS ###
+.apt_generated
 .classpath
 .factorypath
-/bin/
+.project
+.settings
+.springBeans
+
+### IntelliJ IDEA ###
 .idea
-application.pid
-application-local.properties
-target
-/*.iml
-.gradle
-.gradle/
-.lock
+*.iws
+*.iml
+*.ipr
+
+### NetBeans ###
+nbproject/private/
+build/
+nbbuild/
+dist/
+nbdist/
+.nb-gradle/

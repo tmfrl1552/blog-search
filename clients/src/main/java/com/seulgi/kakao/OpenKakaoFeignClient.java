@@ -7,8 +7,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-@FeignClient(name = "OpenKakaoFeignClient", url = "https://dapi.kakao.com")
+@FeignClient(name = "OpenKakaoFeignClient", url = "${kakao.open-api.url}")
 public interface
+
 OpenKakaoFeignClient {
 
     @RequestMapping(method = RequestMethod.GET, value = "/v2/search/blog")
