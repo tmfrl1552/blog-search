@@ -20,8 +20,6 @@ dependencies {
     implementation project(':clients')
 
     implementation 'org.springframework.boot:spring-boot-starter-web:2.3.6.RELEASE'
-    implementation "org.springframework.cloud:spring-cloud-starter-openfeign"
-
 }
 
 
