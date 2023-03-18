@@ -9,11 +9,28 @@ repositories {
     mavenCentral()
 }
 
+
+ext {
+    set('springCloudVersion', "2021.0.1")
+}
+
+
 dependencies {
     implementation project(':core')
+    implementation project(':clients')
 
     implementation 'org.springframework.boot:spring-boot-starter-web:2.3.6.RELEASE'
+    implementation "org.springframework.cloud:spring-cloud-starter-openfeign"
+
 }
+
+
+dependencyManagement {
+    imports {
+        mavenBom "org.springframework.cloud:spring-cloud-dependencies:$springCloudVersion"
+    }
+}
+
 
 test {
     useJUnitPlatform()
