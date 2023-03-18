@@ -1,0 +1,13 @@
+.editorconfig
+.settings/
+target/
+.project
+.classpath
+.factorypath
+/bin/
+.idea
+application.pid
+application-local.properties
+target
+/*.iml
+.gradle
