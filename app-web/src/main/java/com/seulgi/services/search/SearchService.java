@@ -2,13 +2,19 @@ package com.seulgi.services.search;
 
 import com.seulgi.domain.search.Search;
 import com.seulgi.dto.search.SearchBlogsReq;
+import com.seulgi.provider.search.SearchProvider;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 @Service
+@RequiredArgsConstructor
 public class SearchService {
 
-    public Search searchBlogs(SearchBlogsReq req) {
+    private final SearchProvider searchProvider;
+
+    public Search searchBlog(SearchBlogsReq req) {
         // todo - api 통신하는 부분을 어디에다가 만들어야 할까?
+        searchProvider.searchBlog(req);
 
         // test code
         Search search = new Search();
