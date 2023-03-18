@@ -18,3 +18,4 @@ application.pid
 application-local.properties
 target
 /*.iml
+.gradle
