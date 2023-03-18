@@ -7,3 +7,14 @@
 /dataSources/
 /dataSources.local.xml
 .idea
+.editorconfig
+.settings/
+target/
+.project
+.classpath
+.factorypath
+/bin/
+application.pid
+application-local.properties
+target
+/*.iml
