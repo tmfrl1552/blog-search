@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app-web/blog-search.app-web.main.iml" filepath="$PROJECT_DIR$/.idea/modules/app-web/blog-search.app-web.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/clients/blog-search.clients.main.iml" filepath="$PROJECT_DIR$/.idea/modules/clients/blog-search.clients.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/core/blog-search.core.main.iml" filepath="$PROJECT_DIR$/.idea/modules/core/blog-search.core.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app-web/com.seulgi.blog-search.app-web.main.iml" filepath="$PROJECT_DIR$/.idea/modules/app-web/com.seulgi.blog-search.app-web.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/core/org.example.blog-search.core.main.iml" filepath="$PROJECT_DIR$/.idea/modules/core/org.example.blog-search.core.main.iml" />
