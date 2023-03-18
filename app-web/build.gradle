@@ -1,0 +1,20 @@
+plugins {
+    id 'java'
+}
+
+group 'com.seulgi'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation project(':core')
+
+    implementation 'org.springframework.boot:spring-boot-starter-web:2.3.6.RELEASE'
+}
+
+test {
+    useJUnitPlatform()
+}
