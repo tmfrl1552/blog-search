@@ -1,4 +1,4 @@
-package com.seulgi.search.domain;
+package com.seulgi.domain.search;
 
 import lombok.AccessLevel;
 import lombok.Data;
