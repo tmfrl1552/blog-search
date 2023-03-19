@@ -4,13 +4,22 @@ import lombok.AccessLevel;
 import lombok.Data;
 import lombok.experimental.FieldDefaults;
 
+import java.util.Date;
+
 
 @Data
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class Search {
+public class Document {
 
     String title;
 
-    String content;
+    String contents;
 
+    String url;
+
+    String blogname;
+
+    String thumbnail;
+
+    Date datetime;
 }
