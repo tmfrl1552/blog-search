@@ -9,7 +9,7 @@ import lombok.experimental.FieldDefaults;
 @Builder
 @Getter
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class SearchBlogsReq {
+public class SearchBlogReq {
 
     String query;
 
