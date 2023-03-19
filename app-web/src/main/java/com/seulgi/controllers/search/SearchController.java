@@ -1,7 +1,8 @@
 package com.seulgi.controllers.search;
 
-import com.seulgi.domain.search.Search;
-import com.seulgi.dto.search.SearchBlogsReq;
+import com.seulgi.dto.provider.kakao.KaKaoSearchBlogRes;
+import com.seulgi.dto.search.SearchBlogReq;
+import com.seulgi.dto.search.SearchBlogRes;
 import com.seulgi.enums.SearchSortType;
 import com.seulgi.services.search.SearchService;
 import lombok.RequiredArgsConstructor;
@@ -19,12 +20,12 @@ public class SearchController {
 
     // todo - query 안들어 왔을 때 예외처리 해주면 좋을
     @GetMapping("/search/blog")
-    public Search searchBlog(@RequestParam String query,
-                             @RequestParam(defaultValue = "ACCURACY", required = false) SearchSortType sort,
-                             @RequestParam(defaultValue = "1", required = false) int page,
-                             @RequestParam(defaultValue = "10", required = false) int size) {
+    public SearchBlogRes searchBlog(@RequestParam String query,
+                                    @RequestParam(defaultValue = "ACCURACY", required = false) SearchSortType sort,
+                                    @RequestParam(defaultValue = "1", required = false) int page,
+                                    @RequestParam(defaultValue = "10", required = false) int size) {
         return searchService.searchBlog(
-                SearchBlogsReq.builder()
+                SearchBlogReq.builder()
                         .query(query)
                         .sort(sort)
                         .page(page)
