@@ -1,6 +1,6 @@
 package com.seulgi.kakao;
 
-import com.seulgi.dto.provider.kakao.SearchBlogRes;
+import com.seulgi.dto.provider.kakao.KaKaoSearchBlogRes;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,9 +13,9 @@ public interface
 OpenKakaoFeignClient {
 
     @RequestMapping(method = RequestMethod.GET, value = "/v2/search/blog")
-    SearchBlogRes searchBlog(@RequestHeader("Authorization") String token,
-                             @RequestParam("query") String query,
-                             @RequestParam("sort") String sort,
-                             @RequestParam("page") int page,
-                             @RequestParam("size") int size);
+    KaKaoSearchBlogRes searchBlog(@RequestHeader("Authorization") String token,
+                                  @RequestParam("query") String query,
+                                  @RequestParam("sort") String sort,
+                                  @RequestParam("page") int page,
+                                  @RequestParam("size") int size);
 }
