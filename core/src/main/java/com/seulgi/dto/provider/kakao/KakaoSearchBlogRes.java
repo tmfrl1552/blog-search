@@ -12,7 +12,7 @@ import java.util.List;
 @Setter
 @AllArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class KaKaoSearchBlogRes {
+public class KakaoSearchBlogRes {
 
     Meta meta;
 
