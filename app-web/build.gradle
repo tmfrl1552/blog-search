@@ -18,6 +18,7 @@ ext {
 dependencies {
     implementation project(':core')
     implementation project(':clients')
+    implementation project(':repository')
 
     implementation 'org.springframework.boot:spring-boot-starter-web:2.3.6.RELEASE'
 }
