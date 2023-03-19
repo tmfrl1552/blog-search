@@ -1,24 +1,24 @@
 package com.seulgi.exceptions;
 
-import com.seulgi.enums.ResponseCode;
+import com.seulgi.enums.ErrorTypeCode;
 import lombok.Getter;
 
 @Getter
 public class SearchException extends RuntimeException {
 
-    private final ResponseCode responseCode;
+    private final ErrorTypeCode responseCode;
 
     public SearchException(String message) {
         super(message);
-        responseCode = ResponseCode.EXCEPTION_ERROR;
+        responseCode = ErrorTypeCode.EXCEPTION_ERROR;
     }
 
-    public SearchException(ResponseCode responseCode) {
+    public SearchException(ErrorTypeCode responseCode) {
         super(responseCode.getMessage());
         this.responseCode = responseCode;
     }
 
-    public SearchException(ResponseCode responseCode, String message) {
+    public SearchException(ErrorTypeCode responseCode, String message) {
         super(message);
         this.responseCode = responseCode;
     }

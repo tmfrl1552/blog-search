@@ -6,7 +6,7 @@ import com.seulgi.domain.search.Meta;
 import com.seulgi.dto.provider.kakao.KaKaoSearchBlogRes;
 import com.seulgi.dto.search.SearchBlogReq;
 import com.seulgi.dto.search.SearchBlogRes;
-import com.seulgi.enums.ResponseCode;
+import com.seulgi.enums.ErrorTypeCode;
 import com.seulgi.exceptions.SearchException;
 import com.seulgi.kakao.OpenKakaoFeignClient;
 import lombok.RequiredArgsConstructor;
@@ -47,7 +47,7 @@ public class SearchProviderImpl implements SearchProvider {
                     .build();
         } catch (Exception e) {
             log.error("searchBlog error.", e);
-            throw new SearchException(ResponseCode.SEARCH_SERVICE_PROVIDER_ERROR);
+            throw new SearchException(ErrorTypeCode.SEARCH_SERVICE_PROVIDER_ERROR);
         }
     }
 }
