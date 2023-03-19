@@ -1,6 +1,6 @@
 package com.seulgi.domain.response;
 
-import com.seulgi.enums.ResponseCode;
+import com.seulgi.enums.ErrorTypeCode;
 import lombok.AccessLevel;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -14,7 +14,7 @@ public class ErrResponse<T> {
     String message;
 
 
-    public ErrResponse(ResponseCode responseCode) {
+    public ErrResponse(ErrorTypeCode responseCode) {
         this.message = responseCode.getMessage();
         this.code = responseCode.getCode();
     }
