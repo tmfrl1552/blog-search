@@ -1,17 +1,20 @@
-package com.seulgi.domain.provider.kakao;
+package com.seulgi.domain.search;
 
 import lombok.AccessLevel;
+import lombok.Builder;
 import lombok.Data;
 import lombok.experimental.FieldDefaults;
 
 @Data
+@Builder
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class Meta {
 
-    int totalCount;
+    int total;
 
-    int pageableCount;
+    int page;
+
+    int size;
 
     boolean isEnd;
-
 }
