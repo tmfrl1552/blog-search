@@ -1,7 +1,7 @@
 package com.seulgi.services.search;
 
-import com.seulgi.domain.search.Search;
-import com.seulgi.dto.search.SearchBlogsReq;
+import com.seulgi.dto.search.SearchBlogReq;
+import com.seulgi.dto.search.SearchBlogRes;
 import com.seulgi.provider.search.SearchProvider;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -12,16 +12,9 @@ public class SearchService {
 
     private final SearchProvider searchProvider;
 
-    public Search searchBlog(SearchBlogsReq req) {
-        // todo - api 통신하는 부분을 어디에다가 만들어야 할까?
-        searchProvider.searchBlog(req);
-
-        // test code
-        Search search = new Search();
-        search.setTitle("슬기의 글 제목");
-        search.setContent("슬기의 글 본문");
-
-        return search;
+    public SearchBlogRes searchBlog(SearchBlogReq req) {
+        // todo - 여기서 뭐 더 추가로 확인해줘야 하는거나 예외처리해줘야 되는 부분 없을지 생각해보기d
+        return searchProvider.searchBlog(req);
     }
 
     // todo - 인기 검색어 목록 조회 서비스 구현

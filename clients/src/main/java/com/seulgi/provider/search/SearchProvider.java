@@ -1,9 +1,10 @@
 package com.seulgi.provider.search;
 
-import com.seulgi.dto.search.SearchBlogsReq;
+import com.seulgi.dto.search.SearchBlogReq;
+import com.seulgi.dto.search.SearchBlogRes;
 
 public interface SearchProvider {
 
-    public void searchBlog(SearchBlogsReq req);
+    SearchBlogRes searchBlog(SearchBlogReq req);
 
 }
