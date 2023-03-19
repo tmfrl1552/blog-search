@@ -2,6 +2,7 @@ package com.seulgi.controllers.search;
 
 import com.seulgi.dto.search.SearchBlogReq;
 import com.seulgi.dto.search.SearchBlogRes;
+import com.seulgi.dto.search.SearchPopularRes;
 import com.seulgi.enums.SearchSortType;
 import com.seulgi.services.search.SearchService;
 import lombok.RequiredArgsConstructor;
@@ -12,13 +13,12 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/seulgi/v1.0")
+@RequestMapping("/v1.0/search")
 public class SearchController {
 
     final SearchService searchService;
 
-    // todo - query 안들어 왔을 때 예외처리 해주면 좋을
-    @GetMapping("/search/blog")
+    @GetMapping("/blog")
     public SearchBlogRes searchBlog(@RequestParam String query,
                                     @RequestParam(defaultValue = "ACCURACY", required = false) SearchSortType sort,
                                     @RequestParam(defaultValue = "1", required = false) int page,
@@ -30,5 +30,10 @@ public class SearchController {
                         .page(page)
                         .size(size)
                         .build());
+    }
+
+    @GetMapping("/popular/keyword")
+    public SearchPopularRes getPopularKeywords() {
+        return searchService.getPopularKeywords();
     }
 }
