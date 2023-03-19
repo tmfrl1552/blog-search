@@ -1,6 +1,5 @@
 package com.seulgi.controllers.search;
 
-import com.seulgi.dto.provider.kakao.KaKaoSearchBlogRes;
 import com.seulgi.dto.search.SearchBlogReq;
 import com.seulgi.dto.search.SearchBlogRes;
 import com.seulgi.enums.SearchSortType;

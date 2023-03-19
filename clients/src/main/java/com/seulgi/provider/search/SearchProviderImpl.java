@@ -11,7 +11,6 @@ import com.seulgi.exceptions.SearchException;
 import com.seulgi.kakao.OpenKakaoFeignClient;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import lombok.val;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
