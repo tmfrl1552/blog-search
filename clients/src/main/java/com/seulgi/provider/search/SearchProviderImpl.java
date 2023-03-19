@@ -3,11 +3,9 @@ package com.seulgi.provider.search;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.seulgi.domain.search.Document;
 import com.seulgi.domain.search.Meta;
-import com.seulgi.dto.provider.kakao.KaKaoSearchBlogRes;
+import com.seulgi.dto.provider.kakao.KakaoSearchBlogRes;
 import com.seulgi.dto.search.SearchBlogReq;
 import com.seulgi.dto.search.SearchBlogRes;
-import com.seulgi.enums.ErrorTypeCode;
-import com.seulgi.exceptions.SearchException;
 import com.seulgi.kakao.OpenKakaoFeignClient;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -29,12 +27,14 @@ public class SearchProviderImpl implements SearchProvider {
 
     @Override
     public SearchBlogRes searchBlog(SearchBlogReq req) {
+        SearchBlogRes result;
+
         try {
-            KaKaoSearchBlogRes response = kakaoFeignClient.searchBlog(
+            KakaoSearchBlogRes response = kakaoFeignClient.searchBlog(
                     token, req.getQuery(), req.getSort().getName(), req.getPage(), req.getSize());
 
             // todo - [공통] 블로그 검색 dto로 변환하여 응답 주기
-            return SearchBlogRes.builder()
+            result = SearchBlogRes.builder()
                     .meta(Meta.builder()
                             .total(response.getMeta().getPageableCount())
                             .page(req.getPage())
@@ -46,8 +46,15 @@ public class SearchProviderImpl implements SearchProvider {
                             .collect(Collectors.toList()))
                     .build();
         } catch (Exception e) {
-            log.error("searchBlog error.", e);
-            throw new SearchException(ErrorTypeCode.SEARCH_SERVICE_PROVIDER_ERROR);
+            log.error("searchBlog error by Kakao Search api.", e);
+            result = searchBlogByOther(req);
         }
+
+        return result;
+    }
+
+    private SearchBlogRes searchBlogByOther(SearchBlogReq req) {
+        // kakao 장애를 대비하여 naver search api 호출하여 가져오는 부분 추가 필요
+        return null;
     }
 }

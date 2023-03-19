@@ -15,6 +15,9 @@ public class SearchService {
 
     public SearchBlogRes searchBlog(SearchBlogReq req) {
         // todo - 여기서 뭐 더 추가로 확인해줘야 하는거나 예외처리해줘야 되는 부분 없을지 생각
+
+        incrementScore(req.getQuery());
+
         return searchProvider.searchBlog(req);
     }
 
@@ -22,5 +25,9 @@ public class SearchService {
         // todo - 인기 검색어 목록 구현을 어떻게 해야 할까?
 
         return null;
+    }
+
+    private void incrementScore(String keyword) {
+
     }
 }
