@@ -1,4 +1,4 @@
-package com.seulgi.kakao;
+package com.seulgi.feign;
 
 import com.seulgi.dto.provider.kakao.KakaoSearchBlogRes;
 import org.springframework.cloud.openfeign.FeignClient;
