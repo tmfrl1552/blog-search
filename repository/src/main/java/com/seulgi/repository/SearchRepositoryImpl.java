@@ -1,19 +1,20 @@
 package com.seulgi.repository;
 
-import com.seulgi.Search;
+import com.seulgi.SearchKeyword;
 import lombok.RequiredArgsConstructor;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
 import java.sql.Timestamp;
 
-@Component
+@Repository
 @RequiredArgsConstructor
-public class SearchJpa {
+public class SearchRepositoryImpl implements SearchRepository {
 
-    private final SearchRepository searchRepository;
+    private final SearchJpaRepository searchRepository;
 
+    @Override
     public void saveSearchKeyword(String keyword) {
-        Search search = Search.builder()
+        SearchKeyword search = SearchKeyword.builder()
                 .keyword(keyword)
                 .createDatetime(new Timestamp(System.currentTimeMillis()))
                 .build();
