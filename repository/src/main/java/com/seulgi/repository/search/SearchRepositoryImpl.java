@@ -21,6 +21,7 @@ public class SearchRepositoryImpl implements SearchRepository {
     @Override
     @Async
     public void saveSearchKeyword(String keyword) {
+        // todo - 예외처리 추가하기 > save 시에 오류 발생했을 경우
         SearchKeyword search = SearchKeyword.builder()
                 .keyword(keyword)
                 .createDatetime(new Timestamp(System.currentTimeMillis()))
@@ -30,6 +31,7 @@ public class SearchRepositoryImpl implements SearchRepository {
     }
 
     public List<Keyword> getPopularKeywords() {
+        // todo - 예외 처리 추가하기 > find 시에 오류 발생했을 경우
         List<SearchKeywordInterface> searchKeywords = searchRepository.findPopularSearchKeywords(
                 PageRequest.of(0,10));
 
