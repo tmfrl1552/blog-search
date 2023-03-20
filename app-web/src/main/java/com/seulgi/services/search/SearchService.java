@@ -1,12 +1,16 @@
 package com.seulgi.services.search;
 
+import com.seulgi.SearchKeyword;
+import com.seulgi.domain.search.Keyword;
 import com.seulgi.dto.search.SearchBlogReq;
 import com.seulgi.dto.search.SearchBlogRes;
 import com.seulgi.dto.search.SearchPopularRes;
 import com.seulgi.provider.search.SearchProvider;
-import com.seulgi.repository.SearchRepository;
+import com.seulgi.repository.search.SearchRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 @RequiredArgsConstructor
@@ -23,13 +27,15 @@ public class SearchService {
     }
 
     public SearchPopularRes getPopularKeywords() {
-        // todo - 인기 검색어 목록 구현을 어떻게 해야 할까?
+        List<Keyword> popularKeywords = searchRepository.getPopularKeywords();
 
-        return null;
+        return SearchPopularRes.builder()
+                .keywords(popularKeywords)
+                .build();
     }
 
     private void incrementScore(String keyword) {
-        // todo - keyword에 대해서 공백 제거 처리
+        // todo - keyword에 대해서 공백 제거 처리 추가 필요
         searchRepository.saveSearchKeyword(keyword);
     }
 }
