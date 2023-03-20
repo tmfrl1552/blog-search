@@ -13,14 +13,13 @@ import java.sql.Timestamp;
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-public class Search {
+public class SearchKeyword {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
     private String keyword;
-
 
     private Timestamp createDatetime;
 }
