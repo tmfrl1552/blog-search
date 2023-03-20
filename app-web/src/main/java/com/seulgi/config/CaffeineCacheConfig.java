@@ -13,6 +13,7 @@ import org.springframework.context.annotation.Primary;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Objects;
 import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
 
@@ -47,13 +48,14 @@ public class CaffeineCacheConfig {
         List<CaffeineCache> caches = Arrays.stream(CaffeineCacheType.values())
                 .map(cache -> new CaffeineCache(cache.getCacheName(), Caffeine.newBuilder().recordStats()
                                 .expireAfterWrite(
-                                        cache.getExpiredAfterWrite() == null ? expireSeconds : cache.getExpiredAfterWrite(),
+                                        Objects.isNull(cache.getExpiredAfterWrite())
+                                                ? expireSeconds
+                                                : cache.getExpiredAfterWrite(),
                                         TimeUnit.SECONDS)
                                 .maximumSize(cache.getMaximumSize())
-                                .build()
-                        )
-                )
+                                .build()))
                 .collect(Collectors.toList());
+
         cacheManager.setCaches(caches);
         return cacheManager;
     }
