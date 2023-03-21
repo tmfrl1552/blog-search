@@ -7,7 +7,11 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/core/blog-search.core.main.iml" filepath="$PROJECT_DIR$/.idea/modules/core/blog-search.core.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/repository/blog-search.repository.main.iml" filepath="$PROJECT_DIR$/.idea/modules/repository/blog-search.repository.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app-web/com.seulgi.blog-search.app-web.main.iml" filepath="$PROJECT_DIR$/.idea/modules/app-web/com.seulgi.blog-search.app-web.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/clients/com.seulgi.blog-search.clients.main.iml" filepath="$PROJECT_DIR$/.idea/modules/clients/com.seulgi.blog-search.clients.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/repository/com.seulgi.blog-search.repository.main.iml" filepath="$PROJECT_DIR$/.idea/modules/repository/com.seulgi.blog-search.repository.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/core/org.example.blog-search.core.main.iml" filepath="$PROJECT_DIR$/.idea/modules/core/org.example.blog-search.core.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app-web/seulgilee.blog-search.app-web.main.iml" filepath="$PROJECT_DIR$/.idea/modules/app-web/seulgilee.blog-search.app-web.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/core/seulgilee.blog-search.core.main.iml" filepath="$PROJECT_DIR$/.idea/modules/core/seulgilee.blog-search.core.main.iml" />
     </modules>
   </component>
 </project>

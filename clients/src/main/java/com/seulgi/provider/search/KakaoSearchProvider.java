@@ -19,11 +19,11 @@ import java.util.stream.Collectors;
 @Qualifier("KakaoSearchProvider")
 @Component
 @RequiredArgsConstructor
-public class KakaoSearchProviderImpl implements SearchProvider {
+public class KakaoSearchProvider implements SearchProvider {
 
     final OpenKakaoFeignClient kakaoFeignClient;
 
-    final NaverSearchProviderImpl naverSearchProvider;
+    final NaverSearchProvider naverSearchProvider;
 
     final ObjectMapper objectMapper;
 

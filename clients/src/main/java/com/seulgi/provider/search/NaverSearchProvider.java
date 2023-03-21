@@ -21,7 +21,7 @@ import java.util.stream.Collectors;
 @Qualifier("NaverSearchProvider")
 @Component
 @RequiredArgsConstructor
-public class NaverSearchProviderImpl implements SearchProvider {
+public class NaverSearchProvider implements SearchProvider {
 
     final OpenNaverFeignClient naverFeignClient;
 
