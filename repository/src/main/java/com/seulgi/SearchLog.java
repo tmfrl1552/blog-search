@@ -2,10 +2,7 @@ package com.seulgi;
 
 import lombok.*;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.sql.Timestamp;
 
 @Entity
@@ -13,7 +10,8 @@ import java.sql.Timestamp;
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-public class SearchKeyword {
+@Table(name = "SearchLog", indexes = @Index(name = "idx__keyword", columnList = "keyword"))
+public class SearchLog {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

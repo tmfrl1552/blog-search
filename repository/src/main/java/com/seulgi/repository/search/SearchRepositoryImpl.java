@@ -1,6 +1,6 @@
 package com.seulgi.repository.search;
 
-import com.seulgi.SearchKeyword;
+import com.seulgi.SearchLog;
 import com.seulgi.SearchKeywordInterface;
 import com.seulgi.domain.search.Keyword;
 import lombok.RequiredArgsConstructor;
@@ -22,7 +22,7 @@ public class SearchRepositoryImpl implements SearchRepository {
     @Async
     public void saveSearchKeyword(String keyword) {
         // todo - 예외처리 추가하기 > save 시에 오류 발생했을 경우
-        SearchKeyword search = SearchKeyword.builder()
+        SearchLog search = SearchLog.builder()
                 .keyword(keyword)
                 .createDatetime(new Timestamp(System.currentTimeMillis()))
                 .build();
