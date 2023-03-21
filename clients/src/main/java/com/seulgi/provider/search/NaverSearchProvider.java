@@ -1,7 +1,6 @@
 package com.seulgi.provider.search;
 
 import com.seulgi.domain.search.Document;
-import com.seulgi.domain.search.Meta;
 import com.seulgi.dto.provider.naver.NaverSearchBlogRes;
 import com.seulgi.dto.search.SearchBlogReq;
 import com.seulgi.dto.search.SearchBlogRes;
@@ -43,15 +42,10 @@ public class NaverSearchProvider implements SearchProvider {
             NaverSearchBlogRes response = naverFeignClient.searchBlog(
                     clientId, clientSecret, encodeQuery, req.getPage(), req.getSize(), "sim");
 
-            result.setMeta(Meta.builder()
-                    .total(response.getTotal())
-                    .page(response.getStart())
-                    .size(response.getDisplay())
-                    .isEnd(isEnd(response.getTotal(),
-                            response.getStart(),
-                            response.getDisplay()))
-                    .build());
-
+            result.setTotal(response.getTotal());
+            result.setPage(response.getStart());
+            result.setSize(response.getDisplay());
+            result.setEnd(isEnd(response.getTotal(), response.getStart(), response.getDisplay()));
             result.setDocuments(response.getItems().stream()
                     .map(i -> Document.builder()
                             .title(i.getTitle())

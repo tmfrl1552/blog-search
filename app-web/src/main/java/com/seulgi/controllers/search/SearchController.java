@@ -4,7 +4,6 @@ import com.seulgi.aop.response.ApiResponse;
 import com.seulgi.dto.search.SearchBlogReq;
 import com.seulgi.dto.search.SearchBlogRes;
 import com.seulgi.dto.search.SearchPopularRes;
-import com.seulgi.domain.search.Keyword;
 import com.seulgi.enums.SearchSortType;
 import com.seulgi.services.search.SearchService;
 import lombok.RequiredArgsConstructor;
@@ -12,8 +11,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-
-import java.util.List;
 
 @RestController
 @RequiredArgsConstructor

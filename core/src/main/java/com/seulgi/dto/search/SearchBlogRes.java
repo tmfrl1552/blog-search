@@ -1,7 +1,7 @@
 package com.seulgi.dto.search;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.seulgi.domain.search.Document;
-import com.seulgi.domain.search.Meta;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 
@@ -13,7 +13,14 @@ import java.util.List;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class SearchBlogRes {
 
-    Meta meta;
+    int total;
+
+    int page;
+
+    int size;
+
+    @JsonProperty("is_end")
+    boolean isEnd;
 
     List<Document> documents;
 }

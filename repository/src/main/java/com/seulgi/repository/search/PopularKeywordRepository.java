@@ -27,7 +27,7 @@ public class PopularKeywordRepository {
         redisPopularKeywordRepository.updateCountByKeyword(keyword);
     }
 
-    public List<Keyword> getTop10TrendKeywordsLookAside() {
+    public List<Keyword> getTop10PopularKeywords() {
         try {
             return redisPopularKeywordRepository.findTop10ByOrderByCountDesc();
         } catch (Exception e) {

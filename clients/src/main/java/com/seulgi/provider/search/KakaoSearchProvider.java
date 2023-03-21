@@ -2,7 +2,6 @@ package com.seulgi.provider.search;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.seulgi.domain.search.Document;
-import com.seulgi.domain.search.Meta;
 import com.seulgi.dto.provider.kakao.KakaoSearchBlogRes;
 import com.seulgi.dto.search.SearchBlogReq;
 import com.seulgi.dto.search.SearchBlogRes;
@@ -39,12 +38,10 @@ public class KakaoSearchProvider implements SearchProvider {
                     token, req.getQuery(), req.getSort().getName(), req.getPage(), req.getSize());
 
             result = SearchBlogRes.builder()
-                    .meta(Meta.builder()
-                            .total(response.getMeta().getPageableCount())
-                            .page(req.getPage())
-                            .size(req.getSize())
-                            .isEnd(response.getMeta().isEnd())
-                            .build())
+                    .total(response.getMeta().getPageableCount())
+                    .page(req.getPage())
+                    .size(req.getSize())
+                    .isEnd(response.getMeta().isEnd())
                     .documents(response.getDocuments().stream()
                             .map(d -> objectMapper.convertValue(d, Document.class))
                             .collect(Collectors.toList()))
