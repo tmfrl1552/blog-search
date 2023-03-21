@@ -28,22 +28,9 @@ public class RestResponse<T> {
         this.message = responseCode.getMessage();
         this.code = responseCode.getCode();
     }
-
-    public RestResponse(ResponseCode responseCode, Map<String, Object> param) {
-        this.message = responseCode.getMessage();
-        this.code = responseCode.getCode();
-        this.param = param;
-    }
-
     public RestResponse(ResponseCode responseCode, T value) {
         this(responseCode);
         this.value = value;
-    }
-
-    public RestResponse(ResponseCode responseCode, T value, Map<String, Object> param) {
-        this(responseCode);
-        this.value = value;
-        this.param = param;
     }
 
     public RestResponse<T> appendMessage(Object msg) {
