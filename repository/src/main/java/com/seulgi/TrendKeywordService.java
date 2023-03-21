@@ -1,8 +1,8 @@
 package com.seulgi;
 
-import com.seulgi.dto.search.TrendKeywordDTO;
-import com.seulgi.repository.RedisTrendKeywordRepository;
-import com.seulgi.repository.TrendKeywordRepository;
+import com.seulgi.domain.search.Keyword;
+import com.seulgi.repository.search.RedisTrendKeywordRepository;
+import com.seulgi.repository.search.TrendKeywordRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.scheduling.annotation.Scheduled;
@@ -26,7 +26,7 @@ public class TrendKeywordService {
         redisTrendKeywordRepository.updateCountByKeyword(keyword);
     }
 
-    public List<TrendKeywordDTO> getTop10TrendKeywordsLookAside() {
+    public List<Keyword> getTop10TrendKeywordsLookAside() {
         try {
             return redisTrendKeywordRepository.findTop10ByOrderByCountDesc();
         } catch (Exception e) {
@@ -34,13 +34,13 @@ public class TrendKeywordService {
         }
 
         return trendKeywordRepository.findTop10TrendKeywordByOrderByCountDesc().stream()
-                .map(t -> TrendKeywordDTO.of(t.getKeyword(), t.getCount())).collect(toList());
+                .map(t -> Keyword.of(t.getKeyword(), t.getCount())).collect(toList());
     }
 
     @Transactional
     @Scheduled(fixedDelay = 1000 * 60 * 10)
     public void backupTrendKeyword() {
-        List<TrendKeywordDTO> redisTop10Keywords = redisTrendKeywordRepository.findTop10ByOrderByCountDesc();
+        List<Keyword> redisTop10Keywords = redisTrendKeywordRepository.findTop10ByOrderByCountDesc();
         List<TrendKeyword> list = redisTop10Keywords.stream()
                 .map(t -> TrendKeyword.of(t.getKeyword(), t.getCount()))
                 .collect(toList());

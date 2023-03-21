@@ -4,7 +4,7 @@ import com.seulgi.aop.response.ApiResponse;
 import com.seulgi.dto.search.SearchBlogReq;
 import com.seulgi.dto.search.SearchBlogRes;
 import com.seulgi.dto.search.SearchPopularRes;
-import com.seulgi.dto.search.TrendKeywordDTO;
+import com.seulgi.domain.search.Keyword;
 import com.seulgi.enums.SearchSortType;
 import com.seulgi.services.search.SearchService;
 import lombok.RequiredArgsConstructor;
@@ -40,10 +40,5 @@ public class SearchController {
     @GetMapping("/popular/keyword")
     public SearchPopularRes getPopularKeywords() {
         return searchService.getPopularKeywords();
-    }
-
-    @GetMapping("/trend")
-    public List<TrendKeywordDTO> getTrendKeywords() {
-        return searchService.getTrendKeywords();
     }
 }

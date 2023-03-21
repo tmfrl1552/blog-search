@@ -1,16 +1,17 @@
 package com.seulgi.domain.search;
 
 import lombok.AccessLevel;
-import lombok.Builder;
-import lombok.Data;
+import lombok.Getter;
+import lombok.RequiredArgsConstructor;
 import lombok.experimental.FieldDefaults;
 
-@Data
-@Builder
+@Getter
+@RequiredArgsConstructor(staticName = "of")
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class Keyword {
 
-    String keyword;
+    final String keyword;
 
-    int score;
+    final Long count;
+
 }

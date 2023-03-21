@@ -1,6 +1,6 @@
-package com.seulgi.repository;
+package com.seulgi.repository.search;
 
-import com.seulgi.dto.search.TrendKeywordDTO;
+import com.seulgi.domain.search.Keyword;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.ZSetOperations;
@@ -24,7 +24,7 @@ public class RedisTrendKeywordRepository {
         redisTemplate.opsForZSet().incrementScore("keyword", keyword, 1d);
     }
 
-    public List<TrendKeywordDTO> findTop10ByOrderByCountDesc() {
+    public List<Keyword> findTop10ByOrderByCountDesc() {
 
         ZSetOperations<String, String> zSet = redisTemplate.opsForZSet();
         Set<TypedTuple<String>> tuples = zSet.reverseRangeWithScores("keyword", 0, 9);
@@ -33,7 +33,7 @@ public class RedisTrendKeywordRepository {
             return Collections.emptyList();
         }
         return tuples.stream()
-                .map(tuple -> TrendKeywordDTO.of(tuple.getValue(),
+                .map(tuple -> Keyword.of(tuple.getValue(),
                         Objects.requireNonNull(tuple.getScore()).longValue()))
                 .collect(toList());
     }

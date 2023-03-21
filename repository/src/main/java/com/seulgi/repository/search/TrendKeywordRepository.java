@@ -1,4 +1,4 @@
-package com.seulgi.repository;
+package com.seulgi.repository.search;
 
 import com.seulgi.TrendKeyword;
 import org.springframework.data.jpa.repository.JpaRepository;
