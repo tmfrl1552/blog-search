@@ -1,10 +1,13 @@
 package com.seulgi.services.search;
 
+import com.seulgi.TrendKeywordService;
 import com.seulgi.domain.search.Keyword;
 import com.seulgi.dto.search.SearchBlogReq;
 import com.seulgi.dto.search.SearchBlogRes;
 import com.seulgi.dto.search.SearchPopularRes;
+import com.seulgi.dto.search.TrendKeywordDTO;
 import com.seulgi.provider.search.SearchProvider;
+import com.seulgi.repository.TrendKeywordRepository;
 import com.seulgi.repository.search.SearchRepository;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.cache.annotation.Cacheable;
@@ -18,16 +21,19 @@ public class SearchService {
     private final SearchProvider searchProvider;
     private final SearchRepository searchRepository;
 
+    private final TrendKeywordService trendKeywordService;
+
     public SearchService(@Qualifier("KakaoSearchProvider") SearchProvider searchProvider,
-                         SearchRepository searchRepository) {
+                         SearchRepository searchRepository,
+                         TrendKeywordService trendKeywordService) {
         this.searchProvider = searchProvider;
         this.searchRepository = searchRepository;
+        this.trendKeywordService = trendKeywordService;
     }
 
     public SearchBlogRes searchBlog(SearchBlogReq req) {
-        // todo - 여기서 뭐 더 추가로 확인해줘야 하는거나 예외처리
-        //  해줘야 되는 부분 없을지 생각 필요
-        incrementScore(req.getQuery());
+//        incrementScore(req.getQuery());
+        trendKeywordService.updateCountByKeyword(req.getQuery());
 
         return searchProvider.searchBlog(req);
     }
@@ -41,8 +47,12 @@ public class SearchService {
                 .build();
     }
 
-    private void incrementScore(String keyword) {
+    public List<TrendKeywordDTO> getTrendKeywords() {
+        return trendKeywordService.getTop10TrendKeywordsLookAside();
+    }
+
+    /*private void incrementScore(String keyword) {
         // todo - keyword에 대해서 공백 제거 처리 추가 필요
         searchRepository.saveSearchKeyword(keyword);
-    }
+    }*/
 }
