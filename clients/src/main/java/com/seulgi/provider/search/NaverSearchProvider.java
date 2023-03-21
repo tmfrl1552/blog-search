@@ -34,7 +34,7 @@ public class NaverSearchProvider implements SearchProvider {
 
     @Override
     public SearchBlogRes searchBlog(SearchBlogReq req) {
-        SearchBlogRes result = null;
+        SearchBlogRes result = SearchBlogRes.builder().build();
 
         try {
             // todo - sort type 어떻게 해줄건지,, > 공통화 해줄건지?
@@ -43,25 +43,24 @@ public class NaverSearchProvider implements SearchProvider {
             NaverSearchBlogRes response = naverFeignClient.searchBlog(
                     clientId, clientSecret, encodeQuery, req.getPage(), req.getSize(), "sim");
 
-            result = SearchBlogRes.builder()
-                    .meta(Meta.builder()
-                            .total(response.getTotal())
-                            .page(response.getStart())
-                            .size(response.getDisplay())
-                            .isEnd(isEnd(response.getTotal(),
-                                    response.getStart(),
-                                    response.getDisplay()))
+            result.setMeta(Meta.builder()
+                    .total(response.getTotal())
+                    .page(response.getStart())
+                    .size(response.getDisplay())
+                    .isEnd(isEnd(response.getTotal(),
+                            response.getStart(),
+                            response.getDisplay()))
+                    .build());
+
+            result.setDocuments(response.getItems().stream()
+                    .map(i -> Document.builder()
+                            .title(i.getTitle())
+                            .contents(i.getDescription())
+                            .url(i.getLink())
+                            .blogname(i.getBloggername())
+                            .datetime(i.getPostdate())
                             .build())
-                    .documents(response.getItems().stream()
-                            .map(i -> Document.builder()
-                                    .title(i.getTitle())
-                                    .contents(i.getDescription())
-                                    .url(i.getLink())
-                                    .blogname(i.getBloggername())
-                                    .datetime(i.getPostdate())
-                                    .build())
-                            .collect(Collectors.toList()))
-                    .build();
+                    .collect(Collectors.toList()));
         } catch (Exception e) {
             log.error("[SEARCH PROVIDER] searchBlog error by Naver Search api.", e);
         }
