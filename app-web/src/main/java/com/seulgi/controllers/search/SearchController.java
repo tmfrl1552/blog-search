@@ -1,5 +1,6 @@
 package com.seulgi.controllers.search;
 
+import com.seulgi.aop.response.ApiResponse;
 import com.seulgi.dto.search.SearchBlogReq;
 import com.seulgi.dto.search.SearchBlogRes;
 import com.seulgi.dto.search.SearchPopularRes;
@@ -17,6 +18,7 @@ import java.util.List;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/v1.0/search")
+@ApiResponse
 public class SearchController {
 
     final SearchService searchService;

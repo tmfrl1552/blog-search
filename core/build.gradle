@@ -9,7 +9,9 @@ repositories {
     mavenCentral()
 }
 
-dependencies {}
+dependencies {
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.12.3'
+}
 
 test {
     useJUnitPlatform()

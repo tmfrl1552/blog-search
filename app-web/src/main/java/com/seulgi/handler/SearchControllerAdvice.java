@@ -1,7 +1,7 @@
 package com.seulgi.handler;
 
-import com.seulgi.domain.response.ErrResponse;
-import com.seulgi.enums.ErrorTypeCode;
+import com.seulgi.domain.response.RestResponse;
+import com.seulgi.enums.ResponseCode;
 import com.seulgi.exceptions.SearchException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
@@ -20,23 +20,23 @@ public class SearchControllerAdvice {
 
     @ResponseStatus(value = HttpStatus.OK)
     @ExceptionHandler(SearchException.class)
-    public ErrResponse<Object> exceptionHandler(SearchException e) {
+    public RestResponse<Object> exceptionHandler(SearchException e) {
         log.info(String.format("SearchException code : %s, message : %s",
                 e.getResponseCode(), e.getMessage()), e);
-        return new ErrResponse<>(e.getResponseCode());
+        return new RestResponse<>(e.getResponseCode());
     }
     @ResponseStatus(value = HttpStatus.OK)
     @ExceptionHandler(InvalidParameterException.class)
-    public ErrResponse<Void> exceptionHandler(InvalidParameterException e) {
+    public RestResponse<Void> exceptionHandler(InvalidParameterException e) {
         log.info("InvalidParameterException : ", e);
-        return new ErrResponse<Void>(ErrorTypeCode.INVALID_PARAM).appendMessage(e.getMessage());
+        return new RestResponse<Void>(ResponseCode.INVALID_PARAM).appendMessage(e.getMessage());
     }
 
     @ResponseStatus(value = HttpStatus.OK)
     @ExceptionHandler(MissingServletRequestParameterException.class)
-    public ErrResponse<Object> exceptionHandler(MissingServletRequestParameterException e) {
+    public RestResponse<Object> exceptionHandler(MissingServletRequestParameterException e) {
         log.info("MissingServletRequestParameterException : ", e);
-        return new ErrResponse<>(ErrorTypeCode.INVALID_PARAM)
+        return new RestResponse<>(ResponseCode.INVALID_PARAM)
                 .appendMessage(e.getParameterName());
     }
 }
