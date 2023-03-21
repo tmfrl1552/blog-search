@@ -4,14 +4,21 @@ import lombok.AccessLevel;
 import lombok.Data;
 import lombok.experimental.FieldDefaults;
 
+import java.util.Date;
+
 @Data
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class Meta {
+public class KakaoDocument {
 
-    int totalCount;
+    String title;
 
-    int pageableCount;
+    String contents;
 
-    boolean isEnd;
+    String url;
 
+    String blogname;
+
+    String thumbnail;
+
+    Date datetime;
 }
