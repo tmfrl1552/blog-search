@@ -16,7 +16,7 @@ import static java.util.stream.Collectors.toList;
 
 @Repository
 @RequiredArgsConstructor
-public class RedisTrendKeywordRepository {
+public class RedisPopularKeywordRepository {
 
     private final RedisTemplate<String, String> redisTemplate;
 

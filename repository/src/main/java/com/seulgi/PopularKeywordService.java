@@ -1,8 +1,8 @@
 package com.seulgi;
 
 import com.seulgi.domain.search.Keyword;
-import com.seulgi.repository.search.RedisTrendKeywordRepository;
-import com.seulgi.repository.search.TrendKeywordRepository;
+import com.seulgi.repository.search.RedisPopularKeywordRepository;
+import com.seulgi.repository.search.PopularKeywordRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.scheduling.annotation.Scheduled;
@@ -17,36 +17,36 @@ import static java.util.stream.Collectors.toList;
 @Slf4j
 @Service
 @RequiredArgsConstructor
-public class TrendKeywordService {
+public class PopularKeywordService {
 
-    private final RedisTrendKeywordRepository redisTrendKeywordRepository;
-    private final TrendKeywordRepository trendKeywordRepository;
+    private final RedisPopularKeywordRepository redisPopularKeywordRepository;
+    private final PopularKeywordRepository popularKeywordRepository;
 
     public void updateCountByKeyword(String keyword) {
-        redisTrendKeywordRepository.updateCountByKeyword(keyword);
+        redisPopularKeywordRepository.updateCountByKeyword(keyword);
     }
 
     public List<Keyword> getTop10TrendKeywordsLookAside() {
         try {
-            return redisTrendKeywordRepository.findTop10ByOrderByCountDesc();
+            return redisPopularKeywordRepository.findTop10ByOrderByCountDesc();
         } catch (Exception e) {
             log.error("Failed, get the redis cache trend keyword, {}", e.getMessage());
         }
 
-        return trendKeywordRepository.findTop10TrendKeywordByOrderByCountDesc().stream()
+        return popularKeywordRepository.findTop10TrendKeywordByOrderByCountDesc().stream()
                 .map(t -> Keyword.of(t.getKeyword(), t.getCount())).collect(toList());
     }
 
     @Transactional
     @Scheduled(fixedDelay = 1000 * 60 * 10)
     public void backupTrendKeyword() {
-        List<Keyword> redisTop10Keywords = redisTrendKeywordRepository.findTop10ByOrderByCountDesc();
-        List<TrendKeyword> list = redisTop10Keywords.stream()
-                .map(t -> TrendKeyword.of(t.getKeyword(), t.getCount()))
+        List<Keyword> redisTop10Keywords = redisPopularKeywordRepository.findTop10ByOrderByCountDesc();
+        List<PopularKeyword> list = redisTop10Keywords.stream()
+                .map(t -> PopularKeyword.of(t.getKeyword(), t.getCount()))
                 .collect(toList());
 
         log.info("Back up  redis data in database : " + LocalDateTime.now());
-        trendKeywordRepository.saveAll(list);
+        popularKeywordRepository.saveAll(list);
     }
 
 }

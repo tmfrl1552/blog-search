@@ -1,6 +1,6 @@
 package com.seulgi.services.search;
 
-import com.seulgi.TrendKeywordService;
+import com.seulgi.PopularKeywordService;
 import com.seulgi.dto.search.SearchBlogReq;
 import com.seulgi.dto.search.SearchBlogRes;
 import com.seulgi.dto.search.SearchPopularRes;
@@ -15,10 +15,10 @@ import java.util.List;
 public class SearchService {
 
     private final SearchProvider searchProvider;
-    private final TrendKeywordService trendKeywordService;
+    private final PopularKeywordService trendKeywordService;
 
     public SearchService(@Qualifier("KakaoSearchProvider") SearchProvider searchProvider,
-                         TrendKeywordService trendKeywordService) {
+                         PopularKeywordService trendKeywordService) {
         this.searchProvider = searchProvider;
         this.trendKeywordService = trendKeywordService;
     }

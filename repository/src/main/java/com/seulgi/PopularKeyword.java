@@ -13,14 +13,14 @@ import java.time.LocalDateTime;
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor
-public class TrendKeyword {
+public class PopularKeyword {
 
     @Id
     private String keyword;
     private Long count;
     private LocalDateTime createdAt;
 
-    public static TrendKeyword of(String keyword, Long count) {
-        return new TrendKeyword(keyword, count, LocalDateTime.now());
+    public static PopularKeyword of(String keyword, Long count) {
+        return new PopularKeyword(keyword, count, LocalDateTime.now());
     }
 }
