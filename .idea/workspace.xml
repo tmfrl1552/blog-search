@@ -1,0 +1,486 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="3b16af68-ae78-4b17-92ba-e6dbdc10da1d" name="Changes" comment="[MOD] ./gitignore 업데이트" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="blog-search" type="f1a62948:ProjectNode" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+        <option value="JUnit5 Test Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2NLhtYRi3oZA1ca90sK9e9ibSmx" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;create.test.in.the.same.root&quot;: &quot;true&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;11&quot;,
+    &quot;last_directory_selection&quot;: &quot;/Users/seulgilee-mn/seulgilee/blog-search/clients/src/test/java/com/seulgi/provider/search&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.28653628&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;adc894e0b0ac4353f5d35743e4113c07&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="ReactorSettings">
+    <option name="notificationShown" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+      <recent name="com.seulgi.services.search.SearchServiceTest" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.seulgi.provider.search" />
+      <recent name="com.seulgi.controllers.search" />
+      <recent name="com.seulgi.services.search" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Spring Boot.SearchApplication">
+    <configuration name="KakaoSearchProviderTest.searchBlogSuccessTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":clients:test" />
+            <option value="--tests" />
+            <option value="&quot;com.seulgi.provider.search.KakaoSearchProviderTest.searchBlogSuccessTest&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="NaverSearchProviderTest.searchBlogSuccessTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":clients:test" />
+            <option value="--tests" />
+            <option value="&quot;com.seulgi.provider.search.NaverSearchProviderTest.searchBlogSuccessTest&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="SearchControllerTest.getPopularKeywordsSuccessTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":app-web:test" />
+            <option value="--tests" />
+            <option value="&quot;com.seulgi.controllers.search.SearchControllerTest.getPopularKeywordsSuccessTest&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="SearchControllerTest.searchBlogControllerFailTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":app-web:test" />
+            <option value="--tests" />
+            <option value="&quot;com.seulgi.controllers.search.SearchControllerTest.searchBlogControllerFailTest&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="SearchControllerTest.searchBlogControllerTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":app-web:test" />
+            <option value="--tests" />
+            <option value="&quot;com.seulgi.controllers.search.SearchControllerTest.searchBlogControllerTest&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="ClientsApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="seulgilee.blog-search.clients.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.seulgi.ClientsApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SearchApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="seulgilee-mn.seulgilee.blog-search.app-web.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.seulgi.SearchApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Gradle.NaverSearchProviderTest.searchBlogSuccessTest" />
+        <item itemvalue="Gradle.KakaoSearchProviderTest.searchBlogSuccessTest" />
+        <item itemvalue="Gradle.SearchControllerTest.getPopularKeywordsSuccessTest" />
+        <item itemvalue="Gradle.SearchControllerTest.searchBlogControllerFailTest" />
+        <item itemvalue="Gradle.SearchControllerTest.searchBlogControllerTest" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task id="LOCAL-00001" summary="[MOD] 네이밍 수정">
+      <created>1679449457277</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1679449457277</updated>
+    </task>
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3b16af68-ae78-4b17-92ba-e6dbdc10da1d" name="Changes" comment="[MOD] 네이밍 수정" />
+      <created>1679449484818</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1679449484818</updated>
+      <workItem from="1679449485938" duration="9784000" />
+      <workItem from="1679459307395" duration="3641000" />
+      <workItem from="1679462963866" duration="8848000" />
+      <workItem from="1679471843841" duration="3699000" />
+      <workItem from="1679475559727" duration="3275000" />
+      <workItem from="1679480585944" duration="307000" />
+    </task>
+    <task id="LOCAL-00002" summary="[ADD] feignConfig 추가">
+      <created>1679451146678</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1679451146678</updated>
+    </task>
+    <task id="LOCAL-00003" summary="[ADD] circuitbreaker 추가">
+      <created>1679453953642</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1679453953642</updated>
+    </task>
+    <task id="LOCAL-00004" summary="[ADD] feign fallbackfactory class 추가">
+      <created>1679454044003</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1679454044003</updated>
+    </task>
+    <task id="LOCAL-00005" summary="[ADD] NaverSortType 생성">
+      <created>1679454893749</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1679454893749</updated>
+    </task>
+    <task id="LOCAL-00006" summary="[MOD] NaverSortType 생성에 따른 로직 수정">
+      <created>1679454917225</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1679454917225</updated>
+    </task>
+    <task id="LOCAL-00007" summary="[ADD] SearchDtoMapper 생성 및 적용">
+      <created>1679456383619</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1679456383619</updated>
+    </task>
+    <task id="LOCAL-00008" summary="[ADD] SearchDtoMapper 생성 및 적용">
+      <created>1679459337752</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1679459337752</updated>
+    </task>
+    <task id="LOCAL-00009" summary="[MOD] keyword &gt; @Data 어노테이션 추가">
+      <created>1679462998745</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1679462998745</updated>
+    </task>
+    <task id="LOCAL-00010" summary="[MOD] 네이밍 수정">
+      <created>1679463017452</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1679463017452</updated>
+    </task>
+    <task id="LOCAL-00011" summary="[MOD] 네이밍 수정">
+      <created>1679463039095</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1679463039095</updated>
+    </task>
+    <task id="LOCAL-00012" summary="[ADD] 테스트 코드 추가">
+      <created>1679463057843</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1679463057843</updated>
+    </task>
+    <task id="LOCAL-00013" summary="[ADD] Controller 테스트 코드 추가">
+      <created>1679467284395</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1679467284395</updated>
+    </task>
+    <task id="LOCAL-00014" summary="[MOD] 예외 처리 추가">
+      <created>1679467354760</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1679467354760</updated>
+    </task>
+    <task id="LOCAL-00015" summary="[MOD] etc..">
+      <created>1679467363690</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1679467363690</updated>
+    </task>
+    <task id="LOCAL-00016" summary="[MOD] redis 예외처리 추가">
+      <created>1679468532664</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1679468532664</updated>
+    </task>
+    <task id="LOCAL-00017" summary="[ADD] provider test code 추가">
+      <created>1679470431891</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1679470431891</updated>
+    </task>
+    <task id="LOCAL-00018" summary="[MOD] 불필요 코드 제거">
+      <created>1679471118829</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1679471118829</updated>
+    </task>
+    <task id="LOCAL-00019" summary="[MOD] 불필요 라이브러리 제거">
+      <created>1679476787134</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1679476787134</updated>
+    </task>
+    <task id="LOCAL-00020" summary="[ADD] README.md 추가">
+      <created>1679476811931</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1679476811931</updated>
+    </task>
+    <task id="LOCAL-00021" summary="[MOD] README.md 수정">
+      <created>1679477011478</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1679477011478</updated>
+    </task>
+    <task id="LOCAL-00022" summary="[MOD] query decode 추가">
+      <created>1679477647136</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1679477647136</updated>
+    </task>
+    <task id="LOCAL-00023" summary="[MOD] README.md 업데이트">
+      <created>1679480051260</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1679480051260</updated>
+    </task>
+    <task id="LOCAL-00024" summary="[MOD] jar 파일 업로드">
+      <created>1679480544073</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1679480544073</updated>
+    </task>
+    <task id="LOCAL-00025" summary="[MOD] jar 파일 업로드">
+      <created>1679480598209</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1679480598209</updated>
+    </task>
+    <task id="LOCAL-00026" summary="[MOD] README.md 업데이트">
+      <created>1679480763832</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1679480763832</updated>
+    </task>
+    <task id="LOCAL-00027" summary="[MOD] ./gitignore 업데이트">
+      <created>1679480876447</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1679480876447</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="[ADD] feignConfig 추가" />
+    <MESSAGE value="[ADD] circuitbreaker 추가" />
+    <MESSAGE value="[ADD] feign fallbackfactory class 추가" />
+    <MESSAGE value="[ADD] NaverSortType 생성" />
+    <MESSAGE value="[MOD] NaverSortType 생성에 따른 로직 수정" />
+    <MESSAGE value="[ADD] SearchDtoMapper 생성 및 적용" />
+    <MESSAGE value="[MOD] keyword &gt; @Data 어노테이션 추가" />
+    <MESSAGE value="[MOD] 네이밍 수정" />
+    <MESSAGE value="[ADD] 테스트 코드 추가" />
+    <MESSAGE value="[ADD] Controller 테스트 코드 추가" />
+    <MESSAGE value="[MOD] 예외 처리 추가" />
+    <MESSAGE value="[MOD] etc.." />
+    <MESSAGE value="[MOD] redis 예외처리 추가" />
+    <MESSAGE value="[ADD] provider test code 추가" />
+    <MESSAGE value="[MOD] 불필요 코드 제거" />
+    <MESSAGE value="[MOD] 불필요 라이브러리 제거" />
+    <MESSAGE value="[ADD] README.md 추가" />
+    <MESSAGE value="[MOD] README.md 수정" />
+    <MESSAGE value="[MOD] query decode 추가" />
+    <MESSAGE value="[MOD] jar 파일 업로드" />
+    <MESSAGE value="[MOD] README.md 업데이트" />
+    <MESSAGE value="[MOD] ./gitignore 업데이트" />
+    <option name="LAST_COMMIT_MESSAGE" value="[MOD] ./gitignore 업데이트" />
+  </component>
+</project>
