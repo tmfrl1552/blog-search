@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3b16af68-ae78-4b17-92ba-e6dbdc10da1d" name="Changes" comment="[MOD] repository&gt; entity 경로 수정" />
+    <list default="true" id="3b16af68-ae78-4b17-92ba-e6dbdc10da1d" name="Changes" comment="[MOD] jar 파일 업데이트">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/repository/src/main/resources/application-repository.properties" beforeDir="false" afterPath="$PROJECT_DIR$/repository/src/main/resources/application-repository.properties" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -259,7 +262,7 @@
       <workItem from="1679475559727" duration="3275000" />
       <workItem from="1679480585944" duration="8994000" />
       <workItem from="1679489988317" duration="2832000" />
-      <workItem from="1679492833153" duration="349000" />
+      <workItem from="1679492833153" duration="1028000" />
     </task>
     <task id="LOCAL-00002" summary="[ADD] feignConfig 추가">
       <created>1679451146678</created>
@@ -513,7 +516,14 @@
       <option name="project" value="LOCAL" />
       <updated>1679493148136</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="[MOD] jar 파일 업데이트">
+      <created>1679493233427</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1679493233427</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -531,7 +541,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="[ADD] circuitbreaker 추가" />
     <MESSAGE value="[ADD] feign fallbackfactory class 추가" />
     <MESSAGE value="[ADD] NaverSortType 생성" />
     <MESSAGE value="[MOD] NaverSortType 생성에 따른 로직 수정" />
@@ -556,6 +565,7 @@
     <MESSAGE value="[MOD] gitignore 수정" />
     <MESSAGE value="[MOD] jar 업데이트" />
     <MESSAGE value="[MOD] repository&gt; entity 경로 수정" />
-    <option name="LAST_COMMIT_MESSAGE" value="[MOD] repository&gt; entity 경로 수정" />
+    <MESSAGE value="[MOD] jar 파일 업데이트" />
+    <option name="LAST_COMMIT_MESSAGE" value="[MOD] jar 파일 업데이트" />
   </component>
 </project>
