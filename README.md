@@ -14,6 +14,8 @@
 ### Check
 - Access to http://localhost:8080
 - 로컬 환경 H2 설치 및 실행 확인
+  - 계정 정보 (Default) 
+    - username : sa
 
 <br>
 
