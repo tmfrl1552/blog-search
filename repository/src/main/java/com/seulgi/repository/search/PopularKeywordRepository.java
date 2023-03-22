@@ -32,7 +32,7 @@ public class PopularKeywordRepository {
         try {
             return redisPopularKeywordRepository.findTop10ByOrderByCountDesc();
         } catch (Exception e) {
-            log.error("Get popular keyword error by redis, {}", e.getMessage());
+            log.warn("Get popular keyword error by redis, {}", e.getMessage());
         }
 
         return getTop10PopularKeywordsByJpa();
@@ -60,10 +60,22 @@ public class PopularKeywordRepository {
 
     }
 
+    /**
+     * [Redis > H2 백업 스케줄링]
+     * 스케줄링 주기 : 5분(1000 * 60 * 5)
+     * 테스트를 위해 짧은 주기로 설정했으나, 실 서비스에서는 트래픽을 고려해 주기 변경 필요
+     *
+     */
     @Transactional
     @Scheduled(fixedDelay = 1000 * 60 * 5)
     public void backupPopularKeyword() {
-        List<Keyword> redisTop10Keywords = redisPopularKeywordRepository.findTop10ByOrderByCountDesc();
+        List<Keyword> redisTop10Keywords = new ArrayList<>();
+        try {
+            redisTop10Keywords = redisPopularKeywordRepository.findTop10ByOrderByCountDesc();
+        } catch (Exception e) {
+            log.warn("Get popular keyword error by redis, {}", e.getMessage());
+        }
+
         List<PopularKeyword> list = redisTop10Keywords.stream()
                 .map(t -> PopularKeyword.of(t.getKeyword(), t.getScore()))
                 .collect(toList());

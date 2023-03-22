@@ -1,6 +1,8 @@
 package com.seulgi.repository.search;
 
 import com.seulgi.domain.search.Keyword;
+import com.seulgi.enums.ResponseCode;
+import com.seulgi.exceptions.SearchException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.redis.core.RedisTemplate;
@@ -38,11 +40,11 @@ public class RedisPopularKeywordRepository {
         List<Keyword> result = Collections.emptyList();
 
         try {
-            tuples = redisTemplate.opsForZSet()
-                    .reverseRangeWithScores(POPULAR_KEYWORD_KEY, 0, 9);
+            ZSetOperations<String, String> ZSetOperations = redisTemplate.opsForZSet();
+            tuples = ZSetOperations.reverseRangeWithScores(POPULAR_KEYWORD_KEY, 0, 9);
         } catch (Exception e) {
             log.error("Fail, find 10 popular keywords by redis cache, {}", e.getMessage());
-            tuples = null;
+            throw new SearchException(ResponseCode.REDIS_RESPONSE_ERROR);
         }
 
         if (Objects.nonNull(tuples)) {
