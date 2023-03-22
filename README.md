@@ -3,9 +3,7 @@
 오픈 API를 이용한 '블로그 검색' 서비스 입니다. <br>
 블로그 검색과 인기 검색어 조회 기능을 사용할 수 있습니다. <br>
 
-### 링크 업데이트 필요!!!
-
-* #### 🔗  <a href="https://github.com/chaehyuenwoo/SpringBoot-Project-MEGABOX/wiki/%EC%A3%BC%EC%9A%94-%EA%B8%B0%EB%8A%A5-%EC%86%8C%EA%B0%9C(Login)" >Download Jar file link</a>
+* #### 🔗  <a href="https://github.com/tmfrl1552/blog-search/blob/main/app-web-1.0-SNAPSHOT.jar" >Download Jar file link</a>
 
 ### Run
 
