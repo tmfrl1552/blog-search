@@ -26,33 +26,21 @@
 <br>
 
 ## 📚 사용 라이브러리
-#### 1) Lombok
-* VO, DTO, Entity 관련 작업 용이
+| index |라이브러리| 사용 목적                             |
+|-------|--------------|-----------------------------------|
+| 0     | Lombok   | VO, DTO, Entity 관련 작업 용이          |
+| 1     | Jackson | Json 데이터를 용이하게 다루기 위해 사용          |
+| 2     | Spring Open Feign | 외부 API (kakao, naver open api) 연동 |
+| 3     | Spring Cloud Circuitbreaker Resilience4j |Feign client 사용 시, Fallback 처리 위해 사용|
+| 4     | Spring Data Jpa |관계형 DB 컨트롤을 위해 사용|
+| 5     | Spring Data Redis |Redis 컨트롤을 위해 사용|
+| 6     | Embedded-redis |로컬에서 redis 서버 컨트롤|
+| 7     | Spring boot Starter Test | 테스트 코드 작성|
 
-#### 2) Jackson
-* Json 데이터를 용이하게 다루기 위해 사용
-
-#### 3) Spring Open Feign
-* 외부 API(kakao, naver open api) 연동 
-
-#### 4) Spring Cloud Circuitbreaker Resilience4j
-* Feign client 사용 시, Fallback 처리 위해 사용
-
-#### 5) Spring Data Jpa
-* 관계형 DB 컨트롤을 위해 사용
-
-#### 6) Spring Data Redis
-* Redis 컨트롤을 위해 사용 
-
-#### 7) Embedded-redis
-* 로컬에서 redis 서버 컨트롤
-
-#### 8) Spring boot Starter Test
-* 테스트 코드 작성
 
 <br>
 
-## 📌 API 명세서
+## 📑 API 명세서
 * #### 🔗  <a href="https://github.com/tmfrl1552/blog-search/wiki/%EB%B8%94%EB%A1%9C%EA%B7%B8-%EA%B2%80%EC%83%89-API" >블로그 검색 API 명세서</a>
 * #### 🔗  <a href="https://github.com/tmfrl1552/blog-search/wiki/%EC%9D%B8%EA%B8%B0-%EA%B2%80%EC%83%89%EC%96%B4-%EC%A1%B0%ED%9A%8C-API" >인기 검색어 API 명세서</a>
 
