@@ -26,16 +26,12 @@ public class KakaoSearchProvider implements SearchProvider {
 
     final ObjectMapper objectMapper;
 
-    @Value("${kakao.open-api.token}")
-    private String token;
-
     @Override
     public SearchBlogRes searchBlog(SearchBlogReq req) {
         SearchBlogRes result;
 
         try {
-            KakaoSearchBlogRes response = kakaoFeignClient.searchBlog(
-                    token, req.getQuery(), req.getSort().getName(), req.getPage(), req.getSize());
+            KakaoSearchBlogRes response = kakaoFeignClient.searchBlog(req);
 
             result = SearchBlogRes.builder()
                     .total(response.getMeta().getPageableCount())
