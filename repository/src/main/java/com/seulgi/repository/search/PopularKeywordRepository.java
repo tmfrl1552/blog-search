@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
 import static java.util.stream.Collectors.toList;
@@ -31,12 +32,32 @@ public class PopularKeywordRepository {
         try {
             return redisPopularKeywordRepository.findTop10ByOrderByCountDesc();
         } catch (Exception e) {
-            log.error("Failed, get the redis cache popular keyword, {}", e.getMessage());
+            log.error("Get popular keyword error by redis, {}", e.getMessage());
         }
 
-        // todo - jpa 가져오는 부분도 예외처리 해주면 좋을 것
-        return popularKeywordJpaRepository.findTop10PopularKeywordByOrderByScoreDesc().stream()
-                .map(t -> Keyword.of(t.getKeyword(), t.getScore())).collect(toList());
+        return getTop10PopularKeywordsByJpa();
+    }
+
+    private List<Keyword> getTop10PopularKeywordsByJpa() {
+        List<Keyword> keywords = new ArrayList<>();
+        try {
+            keywords = popularKeywordJpaRepository.findTop10PopularKeywordByOrderByScoreDesc().stream()
+                    .map(t -> Keyword.of(t.getKeyword(), t.getScore()))
+                    .collect(toList());
+        } catch (Exception e) {
+            log.error("Get popular keyword error by h2, {}", e.getMessage());
+        }
+
+        return keywords;
+    }
+
+    private void savePopularKeyword(List<PopularKeyword> keywords) {
+        try {
+            popularKeywordJpaRepository.saveAll(keywords);
+        } catch (Exception e) {
+            log.error("Save popular keywords error by h2, {}", e.getMessage());
+        }
+
     }
 
     @Transactional
@@ -47,8 +68,8 @@ public class PopularKeywordRepository {
                 .map(t -> PopularKeyword.of(t.getKeyword(), t.getScore()))
                 .collect(toList());
 
-        log.info("Back up redis data in database : " + LocalDateTime.now());
-        popularKeywordJpaRepository.saveAll(list);
+        log.info("Back up redis data to database : " + LocalDateTime.now());
+        savePopularKeyword(list);
     }
 
 }

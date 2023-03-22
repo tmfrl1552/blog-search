@@ -20,28 +20,38 @@ import static java.util.stream.Collectors.toList;
 @RequiredArgsConstructor
 public class RedisPopularKeywordRepository {
 
+    final static String POPULAR_KEYWORD_KEY = "keyword";
+
+
     private final RedisTemplate<String, String> redisTemplate;
 
     public void updateScoreByKeyword(String keyword) {
         try {
-            redisTemplate.opsForZSet().incrementScore("keyword", keyword, 1d);
+            redisTemplate.opsForZSet().incrementScore(POPULAR_KEYWORD_KEY, keyword, 1d);
         } catch (Exception e) {
             log.error("Fail, increment score by redis cache, {}", e.getMessage());
         }
     }
 
     public List<Keyword> findTop10ByOrderByCountDesc() {
+        Set<TypedTuple<String>> tuples;
+        List<Keyword> result = Collections.emptyList();
 
-        ZSetOperations<String, String> zSet = redisTemplate.opsForZSet();
-        Set<TypedTuple<String>> tuples = zSet.reverseRangeWithScores("keyword", 0, 9);
-
-        if (Objects.isNull(tuples)) {
-            return Collections.emptyList();
+        try {
+            tuples = redisTemplate.opsForZSet()
+                    .reverseRangeWithScores(POPULAR_KEYWORD_KEY, 0, 9);
+        } catch (Exception e) {
+            log.error("Fail, find 10 popular keywords by redis cache, {}", e.getMessage());
+            tuples = null;
         }
-        return tuples.stream()
-                .map(tuple -> Keyword.of(tuple.getValue(),
-                        Objects.requireNonNull(tuple.getScore()).longValue()))
-                .collect(toList());
-    }
 
+        if (Objects.nonNull(tuples)) {
+            result = tuples.stream()
+                    .map(tuple -> Keyword.of(tuple.getValue(),
+                            Objects.requireNonNull(tuple.getScore()).longValue()))
+                    .collect(toList());
+        }
+
+        return result;
+    }
 }
