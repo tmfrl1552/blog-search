@@ -4,7 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3b16af68-ae78-4b17-92ba-e6dbdc10da1d" name="Changes" comment="[MOD] README.md 수정">
+    <list default="true" id="3b16af68-ae78-4b17-92ba-e6dbdc10da1d" name="Changes" comment="[MOD] 불필요  파일 제거">
+      <change afterPath="$PROJECT_DIR$/repository/src/test/java/com/seulgi/repository/search/PopularKeywordRepositoryTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -56,32 +57,32 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
-    &quot;create.test.in.the.same.root&quot;: &quot;true&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;11&quot;,
-    &quot;last_directory_selection&quot;: &quot;/Users/seulgilee-mn/seulgilee/blog-search/clients/src/test/java/com/seulgi/provider/search&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.28653628&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
-    &quot;spring.configuration.checksum&quot;: &quot;adc894e0b0ac4353f5d35743e4113c07&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "create.test.in.the.same.root": "true",
+    "jdk.selected.JAVA_MODULE": "11",
+    "last_directory_selection": "/Users/seulgilee-mn/seulgilee/blog-search/repository/src/test/java",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.28653628",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
+    "spring.configuration.checksum": "adc894e0b0ac4353f5d35743e4113c07",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
   </component>
@@ -94,6 +95,7 @@
       <recent name="$PROJECT_DIR$" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.seulgi.repository.search" />
       <recent name="com.seulgi.provider.search" />
       <recent name="com.seulgi.controllers.search" />
       <recent name="com.seulgi.services.search" />
@@ -261,7 +263,7 @@
       <workItem from="1679475559727" duration="3275000" />
       <workItem from="1679480585944" duration="8994000" />
       <workItem from="1679489988317" duration="2832000" />
-      <workItem from="1679492833153" duration="2663000" />
+      <workItem from="1679492833153" duration="3488000" />
     </task>
     <task id="LOCAL-00002" summary="[ADD] feignConfig 추가">
       <created>1679451146678</created>
@@ -550,7 +552,14 @@
       <option name="project" value="LOCAL" />
       <updated>1679495309943</updated>
     </task>
-    <option name="localTasksCounter" value="43" />
+    <task id="LOCAL-00043" summary="[MOD] 불필요  파일 제거">
+      <created>1679496316937</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1679496316937</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -568,7 +577,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="[MOD] NaverSortType 생성에 따른 로직 수정" />
     <MESSAGE value="[ADD] SearchDtoMapper 생성 및 적용" />
     <MESSAGE value="[MOD] keyword &gt; @Data 어노테이션 추가" />
     <MESSAGE value="[MOD] 네이밍 수정" />
@@ -593,6 +601,7 @@
     <MESSAGE value="[MOD] h2 username 수정" />
     <MESSAGE value="[MOD] jar 수정" />
     <MESSAGE value="[MOD] README.md 수정" />
-    <option name="LAST_COMMIT_MESSAGE" value="[MOD] README.md 수정" />
+    <MESSAGE value="[MOD] 불필요  파일 제거" />
+    <option name="LAST_COMMIT_MESSAGE" value="[MOD] 불필요  파일 제거" />
   </component>
 </project>
