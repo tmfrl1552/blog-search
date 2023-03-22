@@ -13,8 +13,7 @@
 
 ### Check
 - Access to http://localhost:8080
-- 로컬 환경 H2 설치 및 실행 확인 
-- 로컬 환경 redis 설치 확인
+- 로컬 환경 H2 설치 및 실행 확인
 
 <br>
 
