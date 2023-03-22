@@ -1,9 +1,9 @@
 package com.seulgi.feign.fallback;
 
+import com.seulgi.dto.mapper.SearchDtoMapper;
 import com.seulgi.dto.provider.naver.NaverSearchBlogRes;
 import com.seulgi.feign.OpenKakaoFeignClient;
 import com.seulgi.feign.OpenNaverFeignClient;
-import com.seulgi.dto.mapper.SearchDtoMapper;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.cloud.openfeign.FallbackFactory;
