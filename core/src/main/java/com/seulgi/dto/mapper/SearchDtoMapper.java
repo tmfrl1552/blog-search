@@ -56,14 +56,11 @@ public class SearchDtoMapper {
     }
 
     public static NaverSearchBlogReq naverSearchBlogReqFrom(SearchBlogReq req) {
-        String encodeQuery = URLEncoder.encode(req.getQuery(), StandardCharsets.UTF_8);
-        NaverSortType sortType = NaverSortType.getSortType(req.getSort());
-
         return NaverSearchBlogReq.builder()
-                .query(encodeQuery)
+                .query(req.getQuery())
                 .start(req.getPage())
                 .display(req.getSize())
-                .sort(sortType.getName())
+                .sort(NaverSortType.getSortType(req.getSort()).getName())
                 .build();
     }
 

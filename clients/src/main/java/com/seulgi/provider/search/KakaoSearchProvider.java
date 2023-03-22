@@ -10,6 +10,9 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
+import java.net.URLDecoder;
+import java.nio.charset.StandardCharsets;
+
 @Slf4j
 @Qualifier("KakaoSearchProvider")
 @Component
@@ -20,9 +23,15 @@ public class KakaoSearchProvider implements SearchProvider {
 
     @Override
     public SearchBlogRes searchBlog(SearchBlogReq req) {
+        req.setQuery(decodeQuery(req.getQuery()));
+
         KakaoSearchBlogRes response = kakaoFeignClient.searchBlog(req);
 
         return SearchDtoMapper.searchBlogResFrom(
                 response, req.getPage(), req.getSize());
+    }
+
+    private String decodeQuery(String query) {
+        return URLDecoder.decode(query, StandardCharsets.UTF_8);
     }
 }
