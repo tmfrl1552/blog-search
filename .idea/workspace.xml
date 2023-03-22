@@ -4,18 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3b16af68-ae78-4b17-92ba-e6dbdc10da1d" name="Changes" comment="[MOD] jar 업데이트">
-      <change beforePath="$PROJECT_DIR$/.gradle/7.5.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.5.1/executionHistory/executionHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.5.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.5.1/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.5.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.5.1/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.5.1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.5.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clients/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/clients/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/build/libs/core-1.0-SNAPSHOT-plain.jar" beforeDir="false" afterPath="$PROJECT_DIR$/core/build/libs/core-1.0-SNAPSHOT-plain.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/core/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/seulgi/dto/provider/naver/NaverSearchBlogRes.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/com/seulgi/dto/provider/naver/NaverSearchBlogRes.java" afterDir="false" />
-    </list>
+    <list default="true" id="3b16af68-ae78-4b17-92ba-e6dbdc10da1d" name="Changes" comment="[MOD] repository&gt; entity 경로 수정" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -270,6 +259,7 @@
       <workItem from="1679475559727" duration="3275000" />
       <workItem from="1679480585944" duration="8994000" />
       <workItem from="1679489988317" duration="2832000" />
+      <workItem from="1679492833153" duration="349000" />
     </task>
     <task id="LOCAL-00002" summary="[ADD] feignConfig 추가">
       <created>1679451146678</created>
@@ -516,7 +506,14 @@
       <option name="project" value="LOCAL" />
       <updated>1679492508719</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="[MOD] repository&gt; entity 경로 수정">
+      <created>1679493148136</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1679493148136</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -534,7 +531,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="[ADD] feignConfig 추가" />
     <MESSAGE value="[ADD] circuitbreaker 추가" />
     <MESSAGE value="[ADD] feign fallbackfactory class 추가" />
     <MESSAGE value="[ADD] NaverSortType 생성" />
@@ -559,6 +555,7 @@
     <MESSAGE value="[MOD] README.md 수정" />
     <MESSAGE value="[MOD] gitignore 수정" />
     <MESSAGE value="[MOD] jar 업데이트" />
-    <option name="LAST_COMMIT_MESSAGE" value="[MOD] jar 업데이트" />
+    <MESSAGE value="[MOD] repository&gt; entity 경로 수정" />
+    <option name="LAST_COMMIT_MESSAGE" value="[MOD] repository&gt; entity 경로 수정" />
   </component>
 </project>
