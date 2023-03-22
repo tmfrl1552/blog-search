@@ -1,6 +1,6 @@
 package com.seulgi.repository.search;
 
-import com.seulgi.PopularKeyword;
+import com.seulgi.repository.search.entity.PopularKeyword;
 import com.seulgi.domain.search.Keyword;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

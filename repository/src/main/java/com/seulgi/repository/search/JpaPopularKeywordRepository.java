@@ -1,6 +1,6 @@
 package com.seulgi.repository.search;
 
-import com.seulgi.PopularKeyword;
+import com.seulgi.repository.search.entity.PopularKeyword;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;

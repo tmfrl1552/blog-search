@@ -1,4 +1,4 @@
-package com.seulgi;
+package com.seulgi.repository.search.entity;
 
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
