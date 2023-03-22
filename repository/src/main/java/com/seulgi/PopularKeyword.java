@@ -17,10 +17,10 @@ public class PopularKeyword {
 
     @Id
     private String keyword;
-    private Long count;
+    private Long score;
     private LocalDateTime createdAt;
 
-    public static PopularKeyword of(String keyword, Long count) {
-        return new PopularKeyword(keyword, count, LocalDateTime.now());
+    public static PopularKeyword of(String keyword, Long score) {
+        return new PopularKeyword(keyword, score, LocalDateTime.now());
     }
 }

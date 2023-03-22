@@ -31,7 +31,7 @@ public class SearchService {
 
         SearchBlogRes response = searchProvider.searchBlog(req);
 
-        trendKeywordService.updateCountByKeyword(req.getQuery());
+        trendKeywordService.updateScoreByKeyword(req.getQuery());
 
         return response;
     }

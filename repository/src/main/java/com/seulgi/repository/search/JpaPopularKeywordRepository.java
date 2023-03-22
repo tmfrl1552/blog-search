@@ -5,7 +5,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
 
-public interface PopularKeywordJpaRepository extends JpaRepository<PopularKeyword, String> {
+public interface JpaPopularKeywordRepository extends JpaRepository<PopularKeyword, String> {
 
-    List<PopularKeyword> findTop10PopularKeywordByOrderByCountDesc();
+    List<PopularKeyword> findTop10PopularKeywordByOrderByScoreDesc();
 }

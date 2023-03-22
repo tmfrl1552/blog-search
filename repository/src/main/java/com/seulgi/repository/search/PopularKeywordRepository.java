@@ -20,11 +20,11 @@ import static java.util.stream.Collectors.toList;
 public class PopularKeywordRepository {
 
     private final RedisPopularKeywordRepository redisPopularKeywordRepository;
-    private final PopularKeywordJpaRepository popularKeywordJpaRepository;
+    private final JpaPopularKeywordRepository popularKeywordJpaRepository;
 
     @Async
-    public void updateCountByKeyword(String keyword) {
-        redisPopularKeywordRepository.updateCountByKeyword(keyword);
+    public void updateScoreByKeyword(String keyword) {
+        redisPopularKeywordRepository.updateScoreByKeyword(keyword);
     }
 
     public List<Keyword> getTop10PopularKeywords() {
@@ -34,16 +34,16 @@ public class PopularKeywordRepository {
             log.error("Failed, get the redis cache popular keyword, {}", e.getMessage());
         }
 
-        return popularKeywordJpaRepository.findTop10PopularKeywordByOrderByCountDesc().stream()
-                .map(t -> Keyword.of(t.getKeyword(), t.getCount())).collect(toList());
+        return popularKeywordJpaRepository.findTop10PopularKeywordByOrderByScoreDesc().stream()
+                .map(t -> Keyword.of(t.getKeyword(), t.getScore())).collect(toList());
     }
 
     @Transactional
     @Scheduled(fixedDelay = 1000 * 60 * 5)
-    public void backupTrendKeyword() {
+    public void backupPopularKeyword() {
         List<Keyword> redisTop10Keywords = redisPopularKeywordRepository.findTop10ByOrderByCountDesc();
         List<PopularKeyword> list = redisTop10Keywords.stream()
-                .map(t -> PopularKeyword.of(t.getKeyword(), t.getCount()))
+                .map(t -> PopularKeyword.of(t.getKeyword(), t.getScore()))
                 .collect(toList());
 
         log.info("Back up redis data in database : " + LocalDateTime.now());

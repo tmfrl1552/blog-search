@@ -22,7 +22,7 @@ public class RedisPopularKeywordRepository {
 
     private final RedisTemplate<String, String> redisTemplate;
 
-    public void updateCountByKeyword(String keyword) {
+    public void updateScoreByKeyword(String keyword) {
         try {
             redisTemplate.opsForZSet().incrementScore("keyword", keyword, 1d);
         } catch (Exception e) {

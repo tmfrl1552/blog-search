@@ -12,6 +12,6 @@ public class Keyword {
 
     final String keyword;
 
-    final Long count;
+    final Long score;
 
 }
