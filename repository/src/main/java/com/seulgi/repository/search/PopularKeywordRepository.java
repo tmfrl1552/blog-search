@@ -34,6 +34,7 @@ public class PopularKeywordRepository {
             log.error("Failed, get the redis cache popular keyword, {}", e.getMessage());
         }
 
+        // todo - jpa 가져오는 부분도 예외처리 해주면 좋을 것
         return popularKeywordJpaRepository.findTop10PopularKeywordByOrderByScoreDesc().stream()
                 .map(t -> Keyword.of(t.getKeyword(), t.getScore())).collect(toList());
     }
