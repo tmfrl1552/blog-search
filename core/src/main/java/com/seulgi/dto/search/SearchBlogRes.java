@@ -2,14 +2,15 @@ package com.seulgi.dto.search;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.seulgi.domain.search.Document;
-import lombok.*;
+import lombok.AccessLevel;
+import lombok.Builder;
+import lombok.Data;
 import lombok.experimental.FieldDefaults;
 
 import java.util.List;
 
 @Builder
-@Getter
-@Setter
+@Data
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class SearchBlogRes {
 
