@@ -18,12 +18,12 @@ import java.util.List;
 public class SearchService {
 
     private final SearchProvider searchProvider;
-    private final PopularKeywordRepository trendKeywordService;
+    private final PopularKeywordRepository popularKeywordService;
 
     public SearchService(@Qualifier("KakaoSearchProvider") SearchProvider searchProvider,
                          PopularKeywordRepository trendKeywordService) {
         this.searchProvider = searchProvider;
-        this.trendKeywordService = trendKeywordService;
+        this.popularKeywordService = trendKeywordService;
     }
 
     public SearchBlogRes searchBlog(SearchBlogReq req) {
@@ -31,14 +31,14 @@ public class SearchService {
 
         SearchBlogRes response = searchProvider.searchBlog(req);
 
-        trendKeywordService.updateScoreByKeyword(req.getQuery());
+        popularKeywordService.updateScoreByKeyword(req.getQuery());
 
         return response;
     }
 
     public SearchPopularRes getPopularKeywords() {
 
-        List<Keyword> popularKeywords = trendKeywordService.getTop10PopularKeywords();
+        List<Keyword> popularKeywords = popularKeywordService.getTop10PopularKeywords();
 
         return SearchPopularRes.builder()
                 .keywords(popularKeywords)
