@@ -1,36 +1,37 @@
-package com.seulgi.provider.search;
+package com.seulgi.feign.fallback;
 
-import com.seulgi.domain.search.Document;
+import com.seulgi.domain.provider.kakao.KakaoDocument;
+import com.seulgi.domain.provider.kakao.KakaoMeta;
+import com.seulgi.dto.provider.kakao.KakaoSearchBlogRes;
 import com.seulgi.dto.provider.naver.NaverSearchBlogReq;
 import com.seulgi.dto.provider.naver.NaverSearchBlogRes;
-import com.seulgi.dto.search.SearchBlogReq;
-import com.seulgi.dto.search.SearchBlogRes;
+import com.seulgi.feign.OpenKakaoFeignClient;
 import com.seulgi.feign.OpenNaverFeignClient;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.cloud.openfeign.FallbackFactory;
 import org.springframework.stereotype.Component;
 
 import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
 import java.util.stream.Collectors;
 
-
 @Slf4j
-@Qualifier("NaverSearchProvider")
 @Component
 @RequiredArgsConstructor
-public class NaverSearchProvider implements SearchProvider {
+public class KakaoClientFallbackFactory implements FallbackFactory<OpenKakaoFeignClient> {
 
-    final OpenNaverFeignClient naverFeignClient;
+    private final OpenNaverFeignClient naverFeignClient;
+
 
     @Override
-    public SearchBlogRes searchBlog(SearchBlogReq req) {
-        SearchBlogRes result = SearchBlogRes.builder().build();
+    public OpenKakaoFeignClient create(Throwable cause) {
+        return req -> {
+            log.warn("OpenKakaoFeignClient Fallback : {}", cause.getMessage());
 
-        try {
-            // todo - sort type 어떻게 해줄건지,, > 공통화 해줄건지?
+            // todo - sortType 변경 및, query encode
             String encodeQuery = URLEncoder.encode(req.getQuery(), StandardCharsets.UTF_8);
+
             NaverSearchBlogReq naverSearchBlogReq = NaverSearchBlogReq.builder()
                     .query(encodeQuery)
                     .start(req.getPage())
@@ -40,12 +41,15 @@ public class NaverSearchProvider implements SearchProvider {
 
             NaverSearchBlogRes response = naverFeignClient.searchBlog(naverSearchBlogReq);
 
-            result.setTotal(response.getTotal());
-            result.setPage(response.getStart());
-            result.setSize(response.getDisplay());
-            result.setEnd(isEnd(response.getTotal(), response.getStart(), response.getDisplay()));
+            KakaoSearchBlogRes result = KakaoSearchBlogRes.builder().build();
+
+            result.setMeta(KakaoMeta.builder()
+                            .totalCount(response.getTotal())
+                            .pageableCount(response.getTotal())
+                            .isEnd(isEnd(response.getTotal(), req.getPage(), req.getSize()))
+                    .build());
             result.setDocuments(response.getItems().stream()
-                    .map(i -> Document.builder()
+                    .map(i -> KakaoDocument.builder()
                             .title(i.getTitle())
                             .contents(i.getDescription())
                             .url(i.getLink())
@@ -53,14 +57,14 @@ public class NaverSearchProvider implements SearchProvider {
                             .datetime(i.getPostdate())
                             .build())
                     .collect(Collectors.toList()));
-        } catch (Exception e) {
-            log.error("[SEARCH PROVIDER] searchBlog error by Naver Search api.", e);
-        }
 
-        return result;
+
+            return result;
+        };
     }
 
     private boolean isEnd(int total, int page, int size) {
         return total <= (page * size);
     }
+
 }

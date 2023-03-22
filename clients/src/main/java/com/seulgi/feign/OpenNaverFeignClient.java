@@ -1,24 +1,21 @@
 package com.seulgi.feign;
 
 import com.seulgi.config.feign.NaverFeignConfig;
+import com.seulgi.dto.provider.naver.NaverSearchBlogReq;
 import com.seulgi.dto.provider.naver.NaverSearchBlogRes;
+import com.seulgi.feign.fallback.NaverClientFallbackFactory;
 import org.springframework.cloud.openfeign.FeignClient;
+import org.springframework.cloud.openfeign.SpringQueryMap;
 import org.springframework.http.MediaType;
-import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 
-@FeignClient(name = "OpenNaverFeignClient", url = "${naver.open-api.url}", configuration = NaverFeignConfig.class)
+@FeignClient(name = "OpenNaverFeignClient", url = "${naver.open-api.url}",
+        configuration = NaverFeignConfig.class, fallbackFactory = NaverClientFallbackFactory.class)
 public interface OpenNaverFeignClient {
 
     @RequestMapping(method = RequestMethod.GET, value = "/v1/search/blog.json",
             produces = MediaType.APPLICATION_JSON_VALUE)
-    NaverSearchBlogRes searchBlog(@RequestHeader("X-Naver-Client-Id") String clientId,
-                                  @RequestHeader("X-Naver-Client-Secret") String clientSecret,
-                                  @RequestParam("query") String query,
-                                  @RequestParam("start") int start,
-                                  @RequestParam("display") int display,
-                                  @RequestParam("sort") String sort);
+    NaverSearchBlogRes searchBlog(@SpringQueryMap NaverSearchBlogReq req);
 
 }

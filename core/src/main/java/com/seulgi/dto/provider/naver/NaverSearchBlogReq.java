@@ -1,19 +1,21 @@
-package com.seulgi.domain.provider.kakao;
+package com.seulgi.dto.provider.naver;
 
 import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Data;
 import lombok.experimental.FieldDefaults;
 
-@Data
 @Builder
+@Data
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class KakaoMeta {
+public class NaverSearchBlogReq {
 
-    int totalCount;
+    String query;
 
-    int pageableCount;
+    int display;
 
-    boolean isEnd;
+    int start;
+
+    String sort;
 
 }

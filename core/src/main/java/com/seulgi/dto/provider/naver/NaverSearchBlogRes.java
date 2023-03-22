@@ -1,16 +1,18 @@
 package com.seulgi.dto.provider.naver;
 
 import com.seulgi.domain.provider.naver.Item;
-import lombok.*;
+import lombok.AccessLevel;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import lombok.experimental.FieldDefaults;
 
 import java.util.Date;
 import java.util.List;
 
 @Data
-@Getter
-@Setter
 @AllArgsConstructor
+@NoArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class NaverSearchBlogRes {
 

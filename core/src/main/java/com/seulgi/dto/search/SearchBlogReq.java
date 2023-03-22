@@ -3,11 +3,11 @@ package com.seulgi.dto.search;
 import com.seulgi.enums.SearchSortType;
 import lombok.AccessLevel;
 import lombok.Builder;
-import lombok.Getter;
+import lombok.Data;
 import lombok.experimental.FieldDefaults;
 
 @Builder
-@Getter
+@Data
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class SearchBlogReq {
 
