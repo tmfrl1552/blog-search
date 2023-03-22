@@ -5,7 +5,10 @@ import com.seulgi.enums.ResponseCode;
 import com.seulgi.exceptions.SearchException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.dao.DataAccessException;
+import org.springframework.data.redis.core.RedisOperations;
 import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.data.redis.core.SessionCallback;
 import org.springframework.data.redis.core.ZSetOperations;
 import org.springframework.data.redis.core.ZSetOperations.TypedTuple;
 import org.springframework.stereotype.Repository;
@@ -29,7 +32,15 @@ public class RedisPopularKeywordRepository {
 
     public void updateScoreByKeyword(String keyword) {
         try {
-            redisTemplate.opsForZSet().incrementScore(POPULAR_KEYWORD_KEY, keyword, 1d);
+            redisTemplate.execute(new SessionCallback<>() {
+                @Override
+                public Object execute(RedisOperations operations) throws DataAccessException {
+                    operations.multi();
+                    operations.opsForZSet().incrementScore(POPULAR_KEYWORD_KEY, keyword, 1d);
+                    operations.exec();
+                    return null;
+                }
+            });
         } catch (Exception e) {
             log.error("Fail, increment score by redis cache, {}", e.getMessage());
         }
