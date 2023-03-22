@@ -54,10 +54,9 @@
 
 <br>
 
-## 📌 API 명세서 
-## 명세서 작성 후 링크 업데이트 필요!!!
-* #### 🔗  <a href="https://github.com/chaehyuenwoo/SpringBoot-Project-MEGABOX/wiki/%EC%A3%BC%EC%9A%94-%EA%B8%B0%EB%8A%A5-%EC%86%8C%EA%B0%9C(Login)" >블로그 검색 API 명세서</a>
-* #### 🔗  <a href="https://github.com/chaehyuenwoo/SpringBoot-Project-MEGABOX/wiki/%EC%A3%BC%EC%9A%94-%EA%B8%B0%EB%8A%A5-%EC%86%8C%EA%B0%9C(Login)" >인기 검색어 API 명세서</a>
+## 📌 API 명세서
+* #### 🔗  <a href="https://github.com/tmfrl1552/blog-search/wiki/%EB%B8%94%EB%A1%9C%EA%B7%B8-%EA%B2%80%EC%83%89-API" >블로그 검색 API 명세서</a>
+* #### 🔗  <a href="https://github.com/tmfrl1552/blog-search/wiki/%EC%9D%B8%EA%B8%B0-%EA%B2%80%EC%83%89%EC%96%B4-%EC%A1%B0%ED%9A%8C-API" >인기 검색어 API 명세서</a>
 
 <br>
 
