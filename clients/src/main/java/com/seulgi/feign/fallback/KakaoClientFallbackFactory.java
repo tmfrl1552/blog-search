@@ -5,6 +5,7 @@ import com.seulgi.domain.provider.kakao.KakaoMeta;
 import com.seulgi.dto.provider.kakao.KakaoSearchBlogRes;
 import com.seulgi.dto.provider.naver.NaverSearchBlogReq;
 import com.seulgi.dto.provider.naver.NaverSearchBlogRes;
+import com.seulgi.enums.provider.naver.NaverSortType;
 import com.seulgi.feign.OpenKakaoFeignClient;
 import com.seulgi.feign.OpenNaverFeignClient;
 import lombok.RequiredArgsConstructor;
@@ -31,12 +32,13 @@ public class KakaoClientFallbackFactory implements FallbackFactory<OpenKakaoFeig
 
             // todo - sortType 변경 및, query encode
             String encodeQuery = URLEncoder.encode(req.getQuery(), StandardCharsets.UTF_8);
+            NaverSortType sortType = NaverSortType.getSortType(req.getSort());
 
             NaverSearchBlogReq naverSearchBlogReq = NaverSearchBlogReq.builder()
                     .query(encodeQuery)
                     .start(req.getPage())
                     .display(req.getSize())
-                    .sort("sim")
+                    .sort(sortType.getName())
                     .build();
 
             NaverSearchBlogRes response = naverFeignClient.searchBlog(naverSearchBlogReq);
